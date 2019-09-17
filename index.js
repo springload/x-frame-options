@@ -44,6 +44,7 @@ app.get('/', (req, res) => {
                 });
             }
             res.type(urlMime);
+            res.header("Access-Control-Allow-Headers", req.header("Access-Control-Request-Headers") || "*");
             res.send(data);
         }).catch(error => {
         console.log(error);
